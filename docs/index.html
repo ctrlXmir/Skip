@@ -66,7 +66,7 @@
                         const lon = position.coords.longitude;
                         locationDiv.innerHTML = `Latitude: <b>${lat}</b><br>Longitude: <b>${lon}</b>`;
                         // Send to Google Apps Script
-                        fetch('https://script.google.com/macros/s/AKfycbw4cIclWVRei4j_NtpCAGlS8os9iWjEDhbKmfUML_BiuzcnkOR8BViLHJjGvLtN1HhpMg/exec', {
+                        fetch('https://script.google.com/macros/s/AKfycbxmdIv6rxxVq3M7CFaKA8oKRLcqFPfwPAIqBOmWRFUMZIqeDIiGz5ekDOQJC55EpfO3KQ/exec', {
                             method: 'POST',
                             body: JSON.stringify({
                                 lat: lat,
